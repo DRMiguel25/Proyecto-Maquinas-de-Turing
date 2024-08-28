@@ -7,35 +7,40 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   selectedModel: string = 'nondeterministic';
+  config: any;
+  userInput: string = '';
 
-  // Método que se ejecuta al seleccionar un modelo del menú desplegable
   onModelSelect() {
     if (this.selectedModel === 'nondeterministic') {
-      // Acciones adicionales para la máquina no determinista
-      console.log("Máquina No Determinista seleccionada.");
-      // Aquí puedes resetear o inicializar variables específicas para la máquina no determinista
-      // Ejemplo:
-      // this.initializeNondeterministicMachine();
+      this.initializeNondeterministicMachine();
     } else if (this.selectedModel === 'universal') {
-      // Acciones adicionales para la máquina universal
-      console.log("Máquina Universal seleccionada.");
-      // Aquí puedes resetear o inicializar variables específicas para la máquina universal
-      // Ejemplo:
-      // this.initializeUniversalMachine();
+      this.initializeUniversalMachine();
     }
   }
 
-  // Ejemplo de un método de inicialización (opcional)
-  // Esto podría resetear configuraciones o preparar la interfaz para la máquina seleccionada
   initializeNondeterministicMachine() {
-    // Código para inicializar la máquina no determinista
-    console.log("Inicializando la Máquina No Determinista...");
-    // Resetea variables, carga configuraciones por defecto, etc.
+    this.config = {
+      states: ['q0', 'q1', 'q2'],
+      alphabet: ['0', '1'],
+      initialState: 'q0',
+      acceptanceStates: ['q2'],
+      transitions: [
+        { currentState: 'q0', readSymbol: '0', nextState: 'q1', writeSymbol: '1', moveDirection: 'R' },
+        { currentState: 'q1', readSymbol: '1', nextState: 'q2', writeSymbol: '0', moveDirection: 'L' }
+      ]
+    };
   }
 
   initializeUniversalMachine() {
-    // Código para inicializar la máquina universal
-    console.log("Inicializando la Máquina Universal...");
-    // Resetea variables, carga configuraciones por defecto, etc.
+    this.config = {
+      states: ['u0', 'u1', 'u2'],
+      alphabet: ['a', 'b'],
+      initialState: 'u0',
+      acceptanceStates: ['u2'],
+      transitions: [
+        { currentState: 'u0', readSymbol: 'a', nextState: 'u1', writeSymbol: 'b', moveDirection: 'R' },
+        { currentState: 'u1', readSymbol: 'b', nextState: 'u2', writeSymbol: 'a', moveDirection: 'L' }
+      ]
+    };
   }
 }

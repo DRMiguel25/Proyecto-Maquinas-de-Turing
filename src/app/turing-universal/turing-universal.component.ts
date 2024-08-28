@@ -31,4 +31,14 @@ export class TuringUniversalComponent {
 
     this.executionSteps = this.turingService.simulate(config, this.input);
   }
+
+  resetMachine() {
+    this.states = '';
+    this.alphabet = '';
+    this.initialState = '';
+    this.acceptanceStates = '';
+    this.transitionsInput = '';
+    this.input = '';
+    this.executionSteps = [];
+  }
 }

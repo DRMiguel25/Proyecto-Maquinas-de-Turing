@@ -1,74 +1,75 @@
 .container {
-    background-color: #1f1f47;
-      display: flex;
-      height: 100vh; /* Establece la altura del contenedor al 100% del viewport */
-      
-    }
-    
-    mat-sidenav {
-      width: 200px; /* Establece el ancho del sidenav */
-    }
-    
-    mat-sidenav-content {
-      flex: 1; /* Hace que el contenido principal ocupe todo el espacio restante */
-      padding: 16px; /* Agrega un espacio de 16px alrededor del contenido principal */
-    }
-    
-    mat-nav-list {
-      padding: 0; /* Elimina el relleno del mat-nav-list */
-    }
-    
-    mat-list-item {
-      cursor: pointer; /* Cambia el cursor a pointer al pasar por encima del elemento */
-    }
-    
-    button[mat-icon-button] {
-      color: #42b9fe;
-      background-color: transparent; /* Establece el fondo transparente para el botón */
-      border: none; /* Elimina el borde del botón */
-      outline: none; /* Elimina el contorno al hacer clic en el botón */
-      cursor: pointer; /* Cambia el cursor a pointer al pasar por encima del botón */
-  
-      transition: color 0.8s ease-in-out, transform 0.8s ease-in-out, background-color 0.8s ease-in-out;
-      &:hover{
-          color: black;
-          transform: scale(1.1);
-          background-color: #355C88;
-      }
-    }
-    
-    mat-icon {
-      vertical-align: middle; /* Alinea verticalmente el ícono en el botón */
-    }
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 18px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+ 
+  color: whitesmoke;  display: flex;
+  height: 100vh; /* Establece la altura del contenedor al 100% del viewport */
+}
 
-    
-      .link_container {
-          .link-active {
-              border: 2px solid #13a8fe;
-              border-radius: 8px;
-              color: #13a8fe;
-              
-              .material-symbols-outlined{
-                  color: #13a8fe;
-                  animation: sacudida 200ms linear infinite;
-              }
-              
-          }
-          a {
-              display: flex;
-              gap: 16px;
-              justify-content: flex;
-              align-items: center;
-              padding: 8px;
-              color: black;
-              text-decoration: none;
-              transition-duration: 300ms;
-              &:hover{
-                  background-color:#42b9fe;
-                  color: white;
-                  
-              }
-              
-          }
-      }
-     
+mat-sidenav {
+  width: 200px; /* Establece el ancho del sidenav */
+}
+
+mat-sidenav-content {
+  flex: 1; /* Hace que el contenido principal ocupe todo el espacio restante */
+  padding: 16px; /* Agrega un espacio de 16px alrededor del contenido principal */
+}
+
+mat-nav-list {
+  padding: 0; /* Elimina el relleno del mat-nav-list */
+}
+
+mat-list-item {
+  cursor: pointer; /* Cambia el cursor a pointer al pasar por encima del elemento */
+}
+
+button[mat-icon-button] {
+  color: #42b9fe;
+  background-color: transparent; /* Establece el fondo transparente para el botón */
+  border: none; /* Elimina el borde del botón */
+  outline: none; /* Elimina el contorno al hacer clic en el botón */
+  cursor: pointer; /* Cambia el cursor a pointer al pasar por encima del botón */
+  transition: color 0.8s ease-in-out, transform 0.8s ease-in-out, background-color 0.8s ease-in-out;
+
+  &:hover {
+    color: black;
+    transform: scale(1.1);
+    background-color: #355C88;
+  }
+}
+
+mat-icon {
+  vertical-align: middle; /* Alinea verticalmente el ícono en el botón */
+}
+
+.link_container {
+  .link-active {
+    border: 2px solid #13a8fe;
+    border-radius: 8px;
+    color: #13a8fe;
+
+    .material-symbols-outlined {
+      color: #13a8fe;
+      animation: sacudida 200ms linear infinite;
+    }
+  }
+
+  a {
+    display: flex;
+    gap: 16px;
+    justify-content: flex;
+    align-items: center;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+    transition-duration: 300ms;
+
+    &:hover {
+      background-color: #42b9fe;
+      color: white;
+    }
+  }
+}

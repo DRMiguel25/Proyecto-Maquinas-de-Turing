@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>Simulación de la Máquina de Turing Universal</h2>
-  <form (ngSubmit)="onSubmit()" #utmForm="ngForm">
+  <h2>Simulación de la Máquina de Turing</h2>
+  <form (ngSubmit)="onSubmit()" #turingForm="ngForm">
     <div class="form-group">
       <label for="states">Estados</label>
       <input type="text" id="states" required [(ngModel)]="states" name="states" placeholder="Ej. q0,q1,q2">
@@ -32,7 +32,10 @@
       <input type="text" id="input" required [(ngModel)]="input" name="input" placeholder="Ej. 0101">
     </div>
 
-    <button type="submit">Simular UTM</button>
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary">Simular UTM</button>
+      <button type="button" class="btn btn-secondary" (click)="resetMachine()">Reiniciar Máquina</button>
+    </div>
   </form>
 
   <div *ngIf="executionSteps.length > 0" class="results">

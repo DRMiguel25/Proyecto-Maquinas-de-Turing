@@ -32,7 +32,10 @@
       <input type="text" id="input" required [(ngModel)]="input" name="input" placeholder="Ej. 0101">
     </div>
 
-    <button type="submit">Simular</button>
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary">Simular UTM</button>
+      <button type="button" class="btn btn-secondary" (click)="resetMachine()">Reiniciar Máquina</button>
+    </div>
   </form>
 
   <div *ngIf="executionSteps.length > 0" class="results">

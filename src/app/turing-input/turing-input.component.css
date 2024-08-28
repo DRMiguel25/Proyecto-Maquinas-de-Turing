@@ -3,6 +3,54 @@
   margin: 0 auto;
   padding: 20px;
   color: white;
+
+  .button-group {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 10px; /* Espacio superior para separar de los campos del formulario */
+
+    button {
+      background: black;
+      cursor: pointer;
+      border: none;
+      padding: 8px 16px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      position: relative;
+      border-radius: 12px;
+
+      &.btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      &.btn-secondary {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      &:hover {
+        background: white;
+        color: black;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+        background-size: 800%;
+        border-radius: 10px;
+        filter: blur(4px);
+        animation: glowing 20s linear infinite;
+      }
+    }
+  }
 }
 
 h2, h3 {
@@ -40,40 +88,6 @@ textarea {
   color: #ccc;
 }
 
-button {
-  background: black;
-  cursor: pointer;
-  border: none;
-  padding: 8px 16px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 12px;
-}
-
-button:hover {
-  background: white;
-  color: black;
-}
-
-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg,red,blue,deeppink,blue,red,blue,deeppink,blue);
-  background-size: 800%;
-  border-radius: 10px;
-  filter: blur(4px);
-  animation: glowing 20s linear infinite;
-}
-
-
-
 .results {
   margin-top: 30px;
 }
@@ -93,4 +107,10 @@ li {
 .state {
   text-align: center;
   font-size: 1.2rem;
+}
+
+@keyframes glowing {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
